@@ -19,4 +19,9 @@ export class RestaurantesComponent implements OnInit {
       .then((ofertas: Array<Oferta>) => this.ofertas = ofertas )
   }
 
+  ngOnDestroy()
+  {
+    
+  }
+
 }

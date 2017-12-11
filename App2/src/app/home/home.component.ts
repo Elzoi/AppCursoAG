@@ -6,7 +6,7 @@ import { Oferta } from '../shared/oferta.model'
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers :[OfertasService]
+  providers :[ OfertasService ]
 })
 export class HomeComponent implements OnInit {
 
@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
          this.ofertas = ofertas 
       })
       .catch( ( param: any ) => {
+        console.log(param)
       })
   }
 }

@@ -11,6 +11,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { OfertaComponent } from './oferta/oferta.component';
     RodapeComponent,
     RestaurantesComponent,
     DiversaoComponent,
-    OfertaComponent
+    OfertaComponent,
+    OrdemCompraComponent
   ],
   imports: [
     BrowserModule,

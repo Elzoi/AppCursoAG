@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Http, Response } from '@angular/http'
+
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/toPromise'
@@ -13,7 +14,7 @@ import { Oferta } from './shared/oferta.model'
 export class OfertasService{    
 
     constructor(private http: Http){}
-
+    
     public getOfertas(): Promise<Array<Oferta>> {
         return this.http.get(`${URL_API}?destaque=true`)
             .toPromise()

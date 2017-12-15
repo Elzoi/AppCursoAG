@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID  } from '@angular/core';
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
+import { FormsModule } from '@angular/forms'
 
 import { ROUTES } from './app.routes'
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'pt-Br' } ],

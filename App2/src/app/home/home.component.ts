@@ -17,11 +17,15 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     //this.ofertas = this.ofertasServide.getOfertas() 
     //console.log(this.ofertas)
-    this.ofertasServide.getOfertas()
-      .then( ( ofertas: Array<Oferta> ) =>{
-         this.ofertas = ofertas 
-      })
-      .catch( ( param: any ) => {
+    // this.ofertasServide.getOfertas()
+    //   .then( ( ofertas: Array<Oferta> ) =>{
+    //      this.ofertas = ofertas 
+    //   })
+    //   .catch( ( param: any ) => {
+    //   })
+    this.ofertasServide.getOfertas2()
+      .subscribe((ofertas: Array<Oferta>) =>{
+        this.ofertas = ofertas
       })
   }
 }

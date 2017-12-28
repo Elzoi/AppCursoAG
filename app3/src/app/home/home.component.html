@@ -1,0 +1,15 @@
+<div class="home">
+  <div class="container">
+    <p>
+      home
+    </p>
+    <input type="text" name="mensagem" id="mensagemId" [(ngModel)]="mensagem" >
+    <button type="button" name="enviar" (click)="enviarMensagem()" >Enviar</button>
+    <button type="button" name="acessar" [routerLink]="['/about']">Acessar About</button>
+  </div>
+  <br />
+  <div class="div">
+    <button type="button" name="enviarObj" (click)="enviarObjMensagem()" >Enviar Objeto Mensagem</button>
+  </div>
+</div>
+

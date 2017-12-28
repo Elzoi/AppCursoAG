@@ -15,8 +15,10 @@ export class RestaurantesComponent implements OnInit {
   constructor(private ofertasService: OfertasService ) { }
 
   ngOnInit() {
-    this.ofertasService.getOfertasPorCategoria('restaurante')
-      .then((ofertas: Array<Oferta>) => this.ofertas = ofertas )
+    // this.ofertasService.getOfertasPorCategoria('restaurante')
+    //   .then((ofertas: Array<Oferta>) => this.ofertas = ofertas )
+    this.ofertasService.getOfertasPorCategoria2('restaurante')
+      .subscribe((ofertas: Oferta[])=> this.ofertas = ofertas)
   }
 
   ngOnDestroy()

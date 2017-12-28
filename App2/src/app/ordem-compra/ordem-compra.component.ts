@@ -17,6 +17,5 @@ export class OrdemCompraComponent implements OnInit {
   }
 
   public confirmarCompra():void{
-
   }
 }

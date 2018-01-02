@@ -1,0 +1,6 @@
+import { Atestado } from "./atestado.model";
+
+export class Agendamento{
+    public data: Date
+    public atestado: Atestado
+}

@@ -1,0 +1,40 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { AlertService } from '../sharead/alert.service';
+import { AutenticacaoService } from './autenticacao.service'
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
+  providers: [ AutenticacaoService, AlertService ]
+})
+export class LoginComponent implements OnInit {
+
+  @ViewChild("formLogin")formLogin: NgForm
+  
+  private returnUrl: string
+  
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private authenticationService: AutenticacaoService,
+    private alertService: AlertService
+  ) { }
+
+  ngOnInit() {
+    // reset login status
+    this.authenticationService.logout();
+    
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+  }
+
+  public login():void{
+    this.authenticationService.login(
+      this.formLogin.value['cpf'],
+      this.formLogin.value['matricula'])
+  }
+}

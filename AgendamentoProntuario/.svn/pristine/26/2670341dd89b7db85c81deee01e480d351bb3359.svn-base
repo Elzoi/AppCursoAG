@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="login">
+        <form #formLogin="ngForm" (ngSubmit)="login()">       
+            <h2 class="form-signin-heading">Acesso do Servidor</h2>
+            <input 
+                type="text" 
+                class="form-control" 
+                name="cpf" 
+                placeholder="CPF" 
+                maxlength="11" 
+                minlength="11"
+                required
+                autofocus
+                ngModel
+                />
+            <input
+                type="text" 
+                class="form-control" 
+                name="matricula"
+                placeholder="Matricula" 
+                required
+                ngModel/>      
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Logar</button>   
+        </form>
+    </div>
+</div>

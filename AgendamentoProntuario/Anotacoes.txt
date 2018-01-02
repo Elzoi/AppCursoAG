@@ -1,0 +1,48 @@
+﻿11/12/2017
+-Preparando o anbiente
+-- Instalar o AngularCli
+
+- Criando o projeto
+-- ng new NomeProjeto
+-- npm install //instalando as dependencias do package.json
+-- Editar o arquivo .angular-cli.json, informado 
+..
+  "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/popper.js/dist/popper.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ]
+..
+-- Atualizar o angular no projeto
+--- npm install --save-dev @angular/cli@latest
+
+- Importando dependencias externas
+-- CMD: npm install bootstrap@4.0.0-beta.2
+-- CMD: npm install jquery --save
+-- CMD: npm install popper.js --save
+
+- Sites auxiliares:
+-- Criação dos icones para diversos tamanhos:
+--- https://www.favicon-generator.org/
+--- http://reactivex.io/
+--- https://getbootstrap.com
+--- http://lorenzofox3.github.io/smart-table-website/#top
+
+- Puglins utilizados de terceicos NMPM
+-- https://www.npmjs.com/package/cpf_cnpj
+
+- Para criar o componente
+-- CMD:  \ng g c NomeComponente
+
+-Estrutura form
+<Form
+	<div class="form-group">
+
+
+
+
+- Questões pendentes
+-- Controlar tempo da seção, sua seção vai experirar em 3 2 1 ...

@@ -1,0 +1,17 @@
+  <nav class="navbar navbar-ligh bg-light">
+    
+    <div class="col w-35">
+      <div class="d-flex justify-content-lg-between">
+        <a routerLink="">
+          <img src="/assets/logo.png" />
+        </a>
+      </div>
+    </div>
+
+  <div class="div">
+    <span class="navbar-brand mb-0 h1 d-flex align-central">
+      {{ moduloCorrente }}
+  </span>
+  </div>
+
+  </nav>

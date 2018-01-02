@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="agendamento">
+      <form 
+      #formAgendamento="ngForm"
+      (ngSubmit)="solicitarAgendamento()">
+        <h5>Dados do Agendamento</h5>
+        <hr />
+  
+        <div class="form-group col">
+          <label>Data Inícial</label>
+          <input 
+            type="date" 
+            class="form-control col" 
+            autocomplete="false" 
+            name="dataInicial" 
+            required 
+            [(ngModel)]="dataInicial"
+            #inputDataInicial="ngModel"
+            disabled = "true"
+            >
+          <small *ngIf="!inputDataInicial.valid && inputDataInicial.touched" 
+          class="form-text text-danger"
+          >Data inválida</small>
+        </div>
+        <div class="form-group col">
+            <label>Data Final</label>
+            <input 
+              type="date" 
+              class="form-control col" 
+              autocomplete="false" 
+              name="dataFinal" 
+              required 
+              [(ngModel)]="dataFinal"
+              #inputDataFinal="ngModel"
+              >
+            <small 
+              *ngIf="!inputDataFinal.valid && inputDataFinal.touched" 
+              class="form-text text-danger"
+              >Data inválida</small>
+          </div>
+          <div class="form-group col" data-toggle="modal" data-target="#exampleModal" >
+              <button 
+                type="button" 
+                class="btn btn-lg btn-primary col" 
+                (click)="recuperarAgendasDisponiveis($event)" >Recuperar</button>
+          </div>
+        <br />
+        <br />
+
+        <h4>Agendas Disponíveis</h4>
+        <app-grid-agenda [agendasDisponiveis]="agendasDisponiveis"></app-grid-agenda> 
+      <div class="form-group col">
+          <button 
+            type="submit" 
+            class="btn btn-lg btn-primary col"
+            data-toggle="modal" 
+            data-target="#modalCotacao"
+            >Solicitar Agendamento</button>
+      </div>
+      <br />
+      <br />
+    </form>
+    </div>
+    <confirma-agendamento></confirma-agendamento>
+  </div>

@@ -1,0 +1,8 @@
+export class Agenda{
+    public id: number
+    public dataDisponivel: Date
+    public hora: string
+    public diaSemana: string
+    public medico: string
+    public selecionada: boolean = false
+}

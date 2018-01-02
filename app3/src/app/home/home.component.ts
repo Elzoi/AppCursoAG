@@ -3,6 +3,7 @@ import { DataService } from '../service/data.service';
 import { Mensagem } from '../model/mensagem.model';
 import { DataMensagemService } from '../service/data.mensagem.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -29,5 +30,10 @@ export class HomeComponent implements OnInit {
     obj.texto = this.mensagem
     obj.idMensagem = 123
     this.data2.adicionarMensagem(obj)
+  }
+
+  alerta():void {
+    alert('teste')
+    
   }
 }

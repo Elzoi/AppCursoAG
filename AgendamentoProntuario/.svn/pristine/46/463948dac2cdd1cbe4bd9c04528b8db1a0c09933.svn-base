@@ -1,0 +1,53 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Atestado } from '../_model/atestado.model';
+import { Agendamento } from '../_model/agendamento.model';
+import { NgForm } from '@angular/forms'
+import { Agenda } from '../_model/agenda.model';
+import { forEach } from '@angular/router/src/utils/collection';
+
+@Component({
+  selector: 'app-agendamento',
+  templateUrl: './agendamento.component.html',
+  styleUrls: ['./agendamento.component.css']
+})
+export class AgendamentoComponent implements OnInit {
+
+  @ViewChild('formAgendamento') public formulario: NgForm
+
+  public agendamento: Agendamento
+  public agendasDisponiveis: Array<Agenda>
+  public dataInicial: Date
+  public dataFinal: Date
+
+  constructor() { }
+
+  ngOnInit() {
+
+    let agenda: Agenda = new Agenda()
+    agenda.id = 1
+    agenda.dataDisponivel = new Date(2017, 19, 12)
+    agenda.diaSemana = "terça-feira"
+    agenda.hora= "15:00"
+    agenda.medico = "medico"
+    agenda.selecionada = true
+    this.agendasDisponiveis = [agenda, agenda, agenda]   
+  }
+
+  public solicitarAgendamento(): void{
+    
+  }
+
+  public itemCliked(event: any): void{
+    console.log("clicou")
+  }
+
+  public selecionarAgenda(agendaSelecionada: Agenda, checked: boolean): void{
+    
+    agendaSelecionada.selecionada = checked
+
+    for(let _agenda of this.agendasDisponiveis ){
+      if (_agenda.id != agendaSelecionada.id)
+        _agenda.selecionada = false
+    }
+  }
+}

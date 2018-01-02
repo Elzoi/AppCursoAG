@@ -1,0 +1,5 @@
+
+.alterRow{
+    background-color: #00BFFF;
+    font-weight: bold;
+}

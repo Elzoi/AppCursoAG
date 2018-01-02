@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-5">Olá Servidor</h1>
+    <p class="lead">Selecione uma das seguintes opções.</p>
+    <hr class="my-4">
+    <p>
+        <button 
+        type="button"
+        class="btn btn-primary btn-lg"
+        href="#"
+        role="button"
+        [routerLink] = "['/atestado']"
+        >Agendar Perícia Medica</button>
+    </p>
+
+    <p>
+        <button
+        type="button"
+        class="btn btn-primary btn-lg d-flex justify-content" 
+        href="#" 
+        role="button"
+        [routerLink] = "['/resultadoPericia']"
+        >Resultado da Perícia Medica</button>
+    </p>
+
+    <!--
+          <div class="d-flex justify-content-lg-between">
+            <button
+            type="button"
+            class="btn btn-primary btn-lg" 
+            href="#" 
+            role="button"
+            [routerLink] = "['/resultadoPericia']"
+            >Resultado da Perícia Medica</button>
+          </div>
+        --> 
+   
+  </div>
+</div>

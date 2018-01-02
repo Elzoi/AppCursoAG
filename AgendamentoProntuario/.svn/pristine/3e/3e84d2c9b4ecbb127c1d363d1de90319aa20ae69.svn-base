@@ -1,0 +1,46 @@
+import {Usuario} from '../_model/usuario.model'
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class SessionService{
+    
+    private readonly KEY_STORAGE: string = 'UsuarioInfoKey'
+
+    constructor(){}
+
+    public getSessionId() :string{
+        if (this.getUser() != null)
+            return this.getUser().idSessao
+        else
+            return ''
+    }
+    
+    public getUserLogado(): boolean{
+        return this.getSessionId() != ''
+    }
+
+    private getUser(): Usuario {
+        let usuario: Usuario;
+        usuario = JSON.parse(localStorage.getItem(this.KEY_STORAGE));
+        if (usuario != null)
+            return usuario;
+        else
+            return null
+    }
+
+    public getNameUser(): string{
+        return this.getUser().nome
+    }
+
+    public getCpf(): string{    
+        return this.getUser().cpf
+    }
+
+    public setUser(usuario: Usuario): void{
+        localStorage.setItem(this.KEY_STORAGE, JSON.stringify(usuario))
+    }
+
+    public restartSession(): void{
+        localStorage.removeItem(this.KEY_STORAGE);
+    }
+}

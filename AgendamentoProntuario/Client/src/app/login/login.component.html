@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="login">
+        <form class="form-horizontal" #formLogin="ngForm" (ngSubmit)="login()">       
+            <div class="form-group col-md-6">
+                <h2 class="form-signin-heading">Acesso do Servidor</h2>    
+                <label>CPF</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    name="cpf" 
+                    placeholder="CPF" 
+                    maxlength="11" 
+                    minlength="11"
+                    required
+                    autofocus
+                    ngModel
+                    #inputCPF="ngModel"
+                    [(ngModel)] = "usuario.cpf"/>
+                <small 
+                    *ngIf="inputCPF.touched && !validarCPF(usuario.cpf)" 
+                    class="form-text text-danger"
+                    invalide = true
+                    >CPF no formato inválido</small>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Matricula</label>
+                <input
+                    type="text" 
+                    class="form-control" 
+                    name="matricula"
+                    placeholder="Matricula" 
+                    required
+                    maxlength="10"
+                    ngModel
+                    [(ngModel)] = "usuario.matricula"
+                    />      
+            </div>
+            <div class="form-group col-md-6">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Logar</button>
+                <br/>
+                <div *ngIf="formLogin.submitted && !loginSucesso" class="alert alert-danger" role="alert">
+                    CPF e Matricula inválidos !
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

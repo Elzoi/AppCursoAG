@@ -1,0 +1,6 @@
+export class Agenda{
+    public dataDisponivel: Date
+    public hora: string
+    public disSemana: string
+    public medico: string
+}

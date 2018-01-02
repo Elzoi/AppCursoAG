@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="agendamento">
+      <form 
+      #formAgendamento="ngForm"
+      (ngSubmit)="solicitarAgendamento()">
+  
+        <h5>Dados do Agendamento</h5>
+        <hr />
+  
+        <div class="form-group">
+          <label>Data Inícial</label>
+          <input 
+            type="date" 
+            class="form-control" 
+            autocomplete="false" 
+            name="dataInicial" 
+            required 
+            [(ngModel)]="dataInicial"
+            #inputDataInicial="ngModel"
+            >
+          <small *ngIf="!inputDataInicial.valid && inputDataInicial.touched" class="form-text text-danger">Data inválida</small>
+        </div>
+
+        <div class="form-group">
+            <label>Data Final</label>
+            <input 
+              type="date" 
+              class="form-control" 
+              autocomplete="false" 
+              name="dataFinal" 
+              required 
+              [(ngModel)]="dataFinal"
+              #inputDataFinal="ngModel"
+              >
+            <small *ngIf="!inputDataFinal.valid && inputDataFinal.touched" class="form-text text-danger">Data inválida</small>
+          </div>
+  
+        <button
+          type="button"
+          class="btn btn-success"
+          >
+          Recuperar
+        </button>
+
+        <br />
+        <br />
+
+        <h4>Agendas Disponíveis</h4>
+        <div class="form-group">
+            <table class="table table-hover"> 
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Dia Semana</th>
+                    <th>Hora</th>
+                    <th>Médico</th>
+                    <th class="text-center"></th>
+                </thead>
+                <tbody>
+                  <tr 
+                    *ngFor="let agenda of agendasDisponiveis"
+                    >
+                    <td>{{agenda.dataDisponivel |  date:"dd/MM/yyyy" }}</td>
+                    <td>{{agenda.diaSemana}}</td>
+                    <td>{{agenda.hora}}</td>
+                    <td>{{agenda.medico}}</td>
+                    <td class="text-center">
+                      <input
+                        type="checkbox"
+                        (click)="selecionarAgenda(agenda, false)"
+                        [value]="agenda.id"
+                        [checked] = "agenda.selecionado"
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>          
+        </div>
+      
+          <button
+          type="submit"
+          class="btn btn-primary"
+          >
+          Solicitar Agendamento
+        </button>
+  
+      <br />
+      <br />
+      </form>
+    </div>
+  </div>

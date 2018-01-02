@@ -1,0 +1,24 @@
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs/Observable';
+
+import { AppConfig } from '../app.config'
+import { SessionService } from '../sharead/session.service'
+import { Usuario } from '../_model/usuario.model';
+
+@Injectable()
+export class HttpRequestService{
+ 
+    constructor(
+        private config: AppConfig,
+        private http: HttpClient,
+        private session: SessionService
+    ){}
+
+
+    public getSessionUsuario(cpf: string, matricula: string): Observable<any>
+    {
+        return this.http.get(`${this.config.apiUrl}/usuario?cpf=${cpf}`)
+    }
+
+}

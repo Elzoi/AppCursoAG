@@ -1,0 +1,15 @@
+<div class="topo">
+  <div class="container">
+      <div class="div">
+        <nav class="navbar navbar-expand-md navbar-ligh fixed-top bg-light">
+          <a class="nav-item nav-link active" href="#" [routerLink]="['']" >Home<span class="sr-only">()</span></a>
+          <a class="navbar-brand">Acesso Servidor</a>
+          <div class="navbar-collapse d-flex justify-content-end">
+            <a class="nav-item nav-link">{{ nomeUsuarioLogado }}</a>
+            <a class="nav-item nav-link" href="#" (click)="logout()">Sair</a>
+          </div>
+        </nav>
+      </div>
+  </div>
+</div>
+  

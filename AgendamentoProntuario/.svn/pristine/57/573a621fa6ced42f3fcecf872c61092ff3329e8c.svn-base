@@ -1,0 +1,49 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router'
+import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+
+
+import { ROUTES } from './app.routes'
+
+import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AtestadoComponent } from './atestado/atestado.component';
+import { AgendamentoComponent } from './agendamento/agendamento.component';
+import { TopoComponent } from './topo/topo.component';
+import { RodapeComponent } from './rodape/rodape.component';
+import { RouterLink } from '@angular/router/src/directives/router_link';
+import { ResultadoPericiaComponent } from './resultado-pericia/resultado-pericia.component';
+import { AuthGuard } from './_guards/index';
+import { SessionService } from './sharead/session.service';
+import { HttpRequestService } from './sharead/httpRequest.service';
+import { AppConfig } from './app.config';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    AtestadoComponent,
+    AgendamentoComponent,
+    TopoComponent,
+    RodapeComponent,
+    ResultadoPericiaComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
+  ],
+  providers: [
+    AuthGuard,
+    SessionService,
+    HttpRequestService,
+    AppConfig
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
